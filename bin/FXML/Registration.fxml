@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="500.0" prefWidth="500.0"
+	xmlns="http://javafx.com/javafx/11.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.RegistrationController" >
+	<children>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0"
+			prefHeight="367.0" prefWidth="640.0"
+			style="-fx-background-color: #2D3447;" VBox.vgrow="ALWAYS">
+			<children>
+				<Label layoutX="127.0" layoutY="26.0"
+					prefHeight="29.0" prefWidth="181.0" text="Football Ticket"
+					textFill="#2196f3">
+					<font>
+						<Font size="24.0" />
+					</font>
+				</Label>
+				<Label layoutX="308.0" layoutY="26.0"
+					prefHeight="17.0" prefWidth="74.0" text="v1.0" textFill="#a0a2ab">
+					<font>
+						<Font name="System Bold" size="24.0" />
+					</font>
+				</Label>
+				<Button fx:id="btnSignup" layoutX="175.0" layoutY="417.0"
+					mnemonicParsing="false" prefHeight="32.0" prefWidth="150.0"
+					style="-fx-background-color: #2196f3;" text="Sign Up"
+					textFill="WHITE" onAction="#signup" >
+					<font>
+						<Font size="18.0" />
+					</font>
+				</Button>
+				<TextField fx:id="firstName" layoutX="81.0" layoutY="105.0"
+					promptText="First name" />
+				<TextField fx:id="surName" layoutX="261.0" layoutY="105.0"
+					promptText="Last name" />
+				<ComboBox fx:id="gender" layoutX="81.0" layoutY="165.0" prefWidth="162.0"
+					promptText="Gender" />
+				<TextField fx:id="email" layoutX="261.0" layoutY="165.0"
+					promptText="Email" />
+				<TextField fx:id="contact" layoutX="81.0" layoutY="225.0"
+					promptText="Contact" />
+				<TextField fx:id="address" layoutX="261.0" layoutY="225.0"
+					promptText="Address" />
+				<TextField fx:id="postalCode" layoutX="81.0" layoutY="285.0"
+					promptText="Postal code" />
+				<TextField fx:id="userName" layoutX="261.0" layoutY="285.0"
+					promptText="Username" />
+				<PasswordField fx:id="password" layoutX="81.0" layoutY="345.0"
+					promptText="Password" />
+				<PasswordField fx:id="confirmPassword" layoutX="261.0" layoutY="345.0"
+					promptText="Confirm Password" />
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

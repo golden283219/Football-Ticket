@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0"
+	xmlns="http://javafx.com/javafx/11.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controllers.LoginController">
+	<children>
+		<AnchorPane maxHeight="-1.0" maxWidth="-1.0"
+			style="-fx-background-color: #2D3447;" VBox.vgrow="ALWAYS">
+			<children>
+				<Label layoutX="186.0" layoutY="106.0" prefHeight="29.0"
+					prefWidth="181.0" text="Football Ticket" textFill="#2196f3">
+					<font>
+						<Font size="24.0" />
+					</font>
+				</Label>
+				<Label layoutX="367.0" layoutY="106.0" prefHeight="17.0"
+					prefWidth="74.0" text="v1.0" textFill="#a0a2ab">
+					<font>
+						<Font name="System Bold" size="24.0" />
+					</font>
+				</Label>
+				<Button fx:id="btnSignup" layoutX="539.0" layoutY="20.0"
+					mnemonicParsing="false" prefHeight="32.0" prefWidth="82.0"
+					style="-fx-background-color: #151928;" text="Sign Up"
+					textFill="#a0a2ab" onAction="#signup" />
+				<Label layoutX="441.0" layoutY="27.0" prefHeight="17.0"
+					prefWidth="98.0" text="Not member?" textFill="#a0a2ab" />
+				<TextField fx:id="user" promptText="  Username"
+					layoutX="232.0" layoutY="214.0" prefHeight="26.0" prefWidth="173.0" />
+				<PasswordField fx:id="passwordField" layoutX="232.0"
+					layoutY="252.0" prefHeight="26.0" prefWidth="173.0"
+					promptText="  Password" />
+				<ImageView fitHeight="27.0" fitWidth="31.0"
+					layoutX="193.0" layoutY="214.0" pickOnBounds="true"
+					preserveRatio="true">
+					<image>
+						<Image url="Images/user.png" />
+					</image>
+				</ImageView>
+				<ImageView fitHeight="29.0" fitWidth="33.0"
+					layoutX="191.0" layoutY="251.0" pickOnBounds="true"
+					preserveRatio="true">
+					<image>
+						<Image url="Images/padlock.png" />
+					</image>
+				</ImageView>
+				<Button fx:id="btnLogin" layoutX="337.0" layoutY="319.0"
+					mnemonicParsing="false" onAction="#login" prefHeight="35.0"
+					prefWidth="135.0" style="-fx-background-color:#2196f3;"
+					text="Login" textFill="WHITE">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Button>
+				<Button fx:id="btnGuest" layoutX="164.0" layoutY="322.0"
+					mnemonicParsing="false" onAction="#guest" prefHeight="27.0"
+					prefWidth="160.0" style="-fx-background-color: #2D3447 #2D3447;"
+					text="Continue as Guest &gt;&gt;" textFill="#a0a2ab"
+					underline="true" />
+				<ImageView fx:id="btnBack" fitHeight="38.0"
+					fitWidth="35.0" layoutX="19.0" layoutY="15.0" pickOnBounds="true"
+					preserveRatio="true" onMouseClicked="#back">
+					<image>
+						<Image url="Images/arrow.png" />
+					</image>
+				</ImageView>
+				<Label layoutX="64.0" layoutY="19.0" prefHeight="26.0"
+					prefWidth="98.0" text="Back to home" textFill="#9ea0a8">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Label>
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

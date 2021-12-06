@@ -1,0 +1,50 @@
+.chart-pie-label-line {
+    -fx-stroke: #a0a2ab;
+    -fx-fill: #a0a2ab;
+}
+ 
+.chart-pie-label {
+    -fx-fill: #a0a2ab;
+    -fx-font-size: 1em;
+} 
+.chart-legend {
+   -fx-background-color:  #ffffff;
+}
+.chart-pie-content {
+	-fx-padding: 0px;
+}
+.chart-pie {
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+}
+.chart-content {
+    -fx-padding: 0px;
+    -fx-background-color:transparent;
+}
+
+.chart-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 1.4em;
+    -fx-padding: 0.0em ;
+}
+
+.axis-label {
+    -fx-text-fill: #ffffff;
+}
+
+.chart-plot-background {
+    -fx-background-color:transparent;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke:#505050;
+}
+
+.chart-horizontal-grid-lines {
+    -fx-stroke: #505050;
+}
+
+.chart-alternative-row-fill {
+    -fx-fill:transparent;
+    -fx-stroke: transparent;
+}

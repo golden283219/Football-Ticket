@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.QuestionsController">
+	<children>
+		<AnchorPane maxHeight="-1.0" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #2D3447;" VBox.vgrow="ALWAYS">
+			<children>
+				<Label layoutX="173.0" layoutY="36.0" prefHeight="29.0" prefWidth="181.0" text="Football Ticket" textFill="#2196f3">
+					<font>
+						<Font size="24.0" />
+					</font>
+				</Label>
+				<Label layoutX="354.0" layoutY="36.0" prefHeight="17.0" prefWidth="74.0" text="v1.0" textFill="#a0a2ab">
+					<font>
+						<Font name="System Bold" size="24.0" />
+					</font>
+				</Label>
+				<MenuBar fx:id="menuBar" layoutX="2.0" layoutY="2.0" prefHeight="50.0" prefWidth="75.0" style="-fx-background-color: #2D3447;">
+					<menus>
+						<Menu fx:id="mainMenu" mnemonicParsing="false">
+							<items>
+								<MenuItem mnemonicParsing="false" onAction="#loadDashboard" text="Dashboard" />
+								<MenuItem mnemonicParsing="false" onAction="#loadMap" text="Map" />
+								<MenuItem mnemonicParsing="false" text="Questions" />
+								<MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+				<Label contentDisplay="CENTER" layoutX="51.0" layoutY="105.0" prefHeight="17.0" text="Questions Submitted by Users" textFill="WHITE" />
+				<TextArea fx:id="textArea" layoutX="51.0" layoutY="218.0" prefHeight="191.0" prefWidth="499.0" 
+						stylesheets="/css/textarea.css" wrapText="true" />
+				<Button fx:id="submit" layoutX="222.0" layoutY="435.0" mnemonicParsing="false" onAction="#submitQuestion" 
+						prefHeight="27.0" prefWidth="158.0" style="-fx-background-color: #2196f3;" text="Submit" textFill="WHITE" />
+				<ComboBox fx:id="comboBox" layoutX="51.0" layoutY="129.0" prefHeight="27.0" prefWidth="499.0" />
+				<Label contentDisplay="CENTER" layoutX="51.0" layoutY="197.0" prefHeight="17.0" prefWidth="195.0" text="Submit your question" textFill="WHITE" />
+			</children>
+		</AnchorPane>
+	</children>
+</VBox>

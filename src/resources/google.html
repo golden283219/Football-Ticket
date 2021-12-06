@@ -1,0 +1,110 @@
+<html>
+<head>
+    <!--
+    <script src='http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js'></script>
+    -->
+
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0px; padding: 0px }
+      #map { height: 100%; background-color: #666970; }
+      #autocomplete {
+        position: absolute;
+        top: 10px;
+        left: 107px;
+        height: 29px;
+        min-width: 50px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid #eee;
+        border-left: 0px;
+        border-top: 0px;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 11px;
+        padding: 8px;
+        z-index: 5;
+      }
+    </style>
+ <script type="text/javascript">
+
+        var  map =null;
+        var markerClusterer = null;
+        var locations=null;
+        var markers=[];
+        var latt;
+		var lngg;
+
+		function setCoords(latt,lngg){
+  			this.latt = latt;
+  			this.lngg = lngg;
+		}
+        
+        function clearMarkers()
+        {
+            if(markerClusterer)
+            {
+                markerClusterer.clearMarkers();
+            }
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+
+            }
+
+        }
+       
+       function changeZoom(num)
+       {
+       		map.setZoom(num);
+       }
+       
+       function changeCenter(latlong)
+       {
+       		map.setCenter(latlong);
+       }
+       
+       function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: new google.maps.LatLng(53.800, -1.54),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+      }
+      
+        function drawMap(jsonData) {
+
+          //  var markerImage = new google.maps.MarkerImage(imageUrl,
+                //new google.maps.Size(24, 32));
+            markers=[];
+            for (var i = 0; i < jsonData.length; ++i) {
+
+                var marker = new google.maps.Marker({
+                    position: jsonData[i],
+                   // draggable: true,
+                    map:map
+               //     icon: markerImage
+                });
+                markers.push(marker);
+                markers[i].setMap(map);
+            }
+             markerClusterer = new MarkerClusterer(map, markers);
+
+
+            //  markerClusterer = new MarkerClusterer(map, markers);
+        }
+
+    </script>
+    <script src="markerclusterer.js">
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7rLm0zF_1z0ITeL2g89DRV3jNqDP6MiU">
+    </script>
+
+</head>
+<body>
+    <div id="map"></div>
+</body>
+</html>

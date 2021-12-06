@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+	<children>
+		<AnchorPane maxHeight="-1.0" style="-fx-background-color: #2D3447;" VBox.vgrow="ALWAYS">
+			<children>
+				<Label layoutX="373.0" layoutY="34.0" prefHeight="29.0" prefWidth="181.0" text="Football Ticket" textFill="#2196f3">
+					<font>
+						<Font size="24.0" />
+					</font>
+				</Label>
+				<Label layoutX="554.0" layoutY="34.0" prefHeight="17.0" prefWidth="74.0" text="v1.0" textFill="#a0a2ab">
+					<font>
+						<Font name="System Bold" size="24.0" />
+					</font>
+				</Label>
+				<MenuBar fx:id="menuBar" layoutX="2.0" layoutY="2.0" prefHeight="50.0" prefWidth="75.0" style="-fx-background-color: #2D3447;">
+					<menus>
+						<Menu fx:id="mainMenu" mnemonicParsing="false">
+							<items>
+								<MenuItem mnemonicParsing="false" text="Dashboard" />
+								<MenuItem fx:id="map" mnemonicParsing="false" onAction="#loadMap" text="Map" />
+								<MenuItem mnemonicParsing="false" onAction="#loadQuestions" text="Questions" />
+								<MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+				<Label fx:id="lblWelcome" alignment="CENTER_RIGHT" layoutX="732.0" layoutY="31.0" prefHeight="17.0" prefWidth="188.0" text="Welcome!!" textFill="#a0a2ab" />
+				<GridPane hgap="10.0" layoutX="10.0" layoutY="90.0" prefHeight="700.0" vgap="10.0">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="400.0" />
+						<ColumnConstraints hgrow="SOMETIMES" prefWidth="400.0" />
+						<ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="350.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+						<RowConstraints prefHeight="30.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<PieChart fx:id="pie1" labelLineLength="50.0" stylesheets="/css/chart.css" />
+						<PieChart fx:id="pie2" labelLineLength="50.0" stylesheets="/css/chart.css" GridPane.columnIndex="1" />
+						<BarChart fx:id="bar1" stylesheets="/css/chart.css" GridPane.rowIndex="1">
+							<xAxis>
+								<CategoryAxis side="BOTTOM" />
+							</xAxis>
+							<yAxis>
+								<NumberAxis side="LEFT" />
+							</yAxis>
+							<effect>
+								<Blend />
+							</effect>
+						</BarChart>
+						<BarChart fx:id="bar2" stylesheets="/css/chart.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+							<xAxis>
+								<CategoryAxis side="BOTTOM" />
+							</xAxis>
+							<yAxis>
+								<NumberAxis side="LEFT" />
+							</yAxis>
+						</BarChart>
+						<Label fx:id="area1" prefHeight="350.0" stylesheets="/css/textarea.css" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.hgrow="SOMETIMES" GridPane.vgrow="SOMETIMES" />
+						<Label fx:id="area2" prefHeight="350.0" stylesheets="/css/textarea.css" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES" />
+					</children>
+				</GridPane>
+			</children>
+         <padding>
+            <Insets bottom="10.0" right="10.0" />
+         </padding>
+		</AnchorPane>
+	</children>
+</VBox>
